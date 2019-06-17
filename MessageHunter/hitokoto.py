@@ -11,10 +11,9 @@ GetSource(): 获取出处。
 import requests
 
 class HitoInfo:
-	'sadfdsa'
 	def __init__(self, url = 'https://v1.hitokoto.cn'):
-		self.url = url
-		self.response = None 
+		self.url = url			# 保存一言网的网址
+		self.response = None 	# 保存json格式的https请求回应
 
 	def GetContent(self, bFlush = True):
 		'''
@@ -29,7 +28,6 @@ class HitoInfo:
 
 	def GetCreator(self):
 		' 该方法负责获取一言的作者, 该方法只返回之前缓存下来的信息. '
-
 		if self.response == None:
 			return '提示：请先获取一言内容，再获取作者信息!'
 		else:
@@ -44,19 +42,17 @@ class HitoInfo:
 			return self.response['from']
 
 	def __GetResponse(self):
-		''' 
-		a. 该方法负责对hikotoko进行https请求.
-		b. 该方法仅供类内使用.
-		'''
-		# 网格异常代码后面再补充
+		' a. 该方法负责对hikotoko进行https请求.  b. 该方法仅供类内使用.'
+		# 网络请求异常代码有待补充
 		temp = requests.get(self.url)
 		self.response = temp.json()
 
-if __name__ == '__main__':
+# 实例化一个对象，供外部直接使用
+HitoAnswer = HitoInfo()
 
+if __name__ == '__main__':
 	# 实例化一个对象
 	test = HitoInfo()
-
 	print('######################################')
 	print('下面两条输出提示信息:')
 	print (test.GetSource())

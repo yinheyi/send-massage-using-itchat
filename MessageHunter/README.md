@@ -13,14 +13,14 @@
 
 	2. 没了。
 
-### 2. 从[一言网](https://hitokoto.cn/)获取每日一言  
-- 一言网的api说明<https://hitokoto.cn/api>：
+### 2. 从[ **hitokoto** ](https://hitokoto.cn/)获取每日一言  
+- hitokoto网站的[api接口](https://hitokoto.cn/api)说明：
 
 | 请求地址 | 请求方式 | 说明 | 
 | :---: | :---: | :---: | 
 |https:v1.hitokoto.cn/|GET//POST|站点QPS限制：10, 超过有可能会被民屏蔽|
 
-- 返回参数(默认josn格式)说明:
+- 返回参数(默认json格式)说明:
 
 |id|本条一言的id|
 |:---:|:---:|

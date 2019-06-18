@@ -9,8 +9,9 @@ GetCreator(): 获取作者名
 GetSource(): 获取出处。
 '''
 import requests
+from BaseInfo import *
 
-class HitoInfo:
+class HitoInfo(BaseInfo):
 	def __init__(self, url = 'https://v1.hitokoto.cn'):
 		self.url = url			# 保存一言网的网址
 		self.response = None 	# 保存json格式的https请求回应
